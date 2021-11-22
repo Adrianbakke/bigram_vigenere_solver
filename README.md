@@ -3,14 +3,14 @@ installer requirements med:
 
 kjør med:
 
-    `python3 solver.py <text> <key>`
+    python3 solver.py <text> <key>
 
 eller:
 
-    `python3 solver.py <cipher>`
+    python3 solver.py <cipher>
 
 eksempel:
 
-    `python3 solver.py 'this text is encrypted with the vigenere cipher breaking it is rather easy' hello`
+    python3 solver.py 'this text is encrypted with the vigenere cipher breaking it is rather easy' hello
 
 
