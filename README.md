@@ -9,3 +9,6 @@ eller:
 eksempel:
     python3 solver.py 'this text is encrypted with the vigenere cipher breaking it is rather easy' hello
 
+
+
+basert på: https://www.guballa.de/vigenere-solver
