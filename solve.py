@@ -121,30 +121,17 @@ for kl in tqdm(range(3,30)):
         tmplist.append([bigramHolder,best])
     tmpResults.append(tmplist)
 
-results = {}
+results = []
 for c,r in enumerate(tmpResults,3):
-    fitness = 0
-    if r[0][1] > r[-1][1]: 
-        candkey = r[0][0][0]
-        fitness = r[0][1]
-    else:
-        candkey = r[-1][0][1]
-        fitness = r[-1][1]
-
+    candkey = r[0][0][0] if r[0][1] > r[-1][1] else r[-1][0][1]
     for i in range(len(r)-1):
         t1,t2 = r[i],r[i+1]
-        if t1[1] > t2[1]: 
-            k = t1[0][1]
-            fitness += t1[1]
-        else:
-            k = t2[0][0]
-            fitness += t2[1]
-        candkey += k
-    results[candkey] = fitness/c
+        candkey += t1[0][1] if t1[1] > t2[1] else t2[0][0]
+    results.append(candkey)
 
 best = 0
 bestKeys = {}
-for k,_ in results.items():
+for k in results:
     fitness = 0
     dc = num2alp(V.decryptNum(cipher, alp2num(k)))
     for i in range(len(cipher)-1):
