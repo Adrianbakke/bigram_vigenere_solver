@@ -142,3 +142,4 @@ for k in results:
 
 print("10 beste keys:")
 print(sorted(bestKeys.items(), reverse=True, key=lambda x: x[1])[:10])
+
